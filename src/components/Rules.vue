@@ -1,6 +1,8 @@
 <template>
   <div class="rules">
-    <button @click="show = !show">Sizing</button>
+    <button @click="show = !show">
+      <h1>Show</h1>
+    </button>
     <div v-if="show">
       <h1>Width : {{ width }}</h1>
       <input type="range" min="0" max="200" v-model="width">
