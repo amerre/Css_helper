@@ -2,10 +2,10 @@
   display: grid;
   grid-template-columns: 350px 1fr;
   height: 100vh;
-  #sidebar {
+  .sidebar {
     border: 5px solid red;
   }
-  #content {
+  .content {
     border: 5px solid green;
   }
 }
