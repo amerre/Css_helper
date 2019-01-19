@@ -1,17 +1,21 @@
 <template>
   <div class="rules">
     <button @click="show = !show">
-      <h1>Show</h1>
+      <h1 class="rulesName">Show</h1>
     </button>
-    <div v-if="show">
-      <h1>Width : {{ width }}</h1>
-      <input type="range" min="0" max="200" v-model="width">
-
-      <h1>Height : {{ height }}</h1>
-      <input type="range" min="0" max="200" v-model="height">
-
-      <h1>Border : {{ border }}</h1>
-      <input type="range" min="0" max="80" v-model="border">
+    <div class="rulesWrap" v-if="show">
+      <div>
+        <h1>Width : {{ width }}</h1>
+        <input type="range" min="0" :max="200" v-model="width">
+      </div>
+      <div>
+        <h1>Height : {{ height }}</h1>
+        <input type="range" min="0" max="200" v-model="height">
+      </div>
+      <div>
+        <h1>Border : {{ border }}</h1>
+        <input type="range" min="0" max="80" v-model="border">
+      </div>
     </div>
   </div>
 </template>
