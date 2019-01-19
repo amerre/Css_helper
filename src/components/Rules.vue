@@ -1,18 +1,26 @@
 <template>
   <div class="rules">
-    <h1>Width : {{ width }}</h1>
-    <input type="range" min="0" max="200" v-model="width">
-    <hr>
-    <h1>Height : {{ height }}</h1>
-    <input type="range" min="0" max="200" v-model="height">
-    <hr>
-    <h1>Border : {{ border }}</h1>
-    <input type="range" min="0" max="80" v-model="border">
+    <button @click="show = !show">Sizing</button>
+    <div v-if="show">
+      <h1>Width : {{ width }}</h1>
+      <input type="range" min="0" max="200" v-model="width">
+
+      <h1>Height : {{ height }}</h1>
+      <input type="range" min="0" max="200" v-model="height">
+
+      <h1>Border : {{ border }}</h1>
+      <input type="range" min="0" max="80" v-model="border">
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      show: false
+    };
+  },
   computed: {
     width: {
       get() {
