@@ -2,7 +2,7 @@
   <div class="content">
     <div
       class="box"
-      :style="{ width: width + 'px', height: height + 'px', border: border + borderrgb, backgroundColor: bgrgb }"
+      :style="{ width: width + 'px', height: height + 'px', border: border + borderrgb, backgroundColor: bgrgb, opacity: opacity }"
     ></div>
   </div>
 </template>
@@ -40,6 +40,9 @@ export default {
         this.$store.state.bgcolor.b +
         ")"
       );
+    },
+    opacity() {
+      return this.$store.state.opacity;
     }
   }
 };

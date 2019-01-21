@@ -20,6 +20,9 @@
         <input type="range" min="0" max="255" v-model="bggcolor">
         <h1>B:{{ bgbcolor }}</h1>
         <input type="range" min="0" max="255" v-model="bgbcolor">
+
+        <h1>Opacity : {{ opacity }}</h1>
+        <input type="range" min="0" max="1" v-model="opacity" step="0.1">
       </div>
     </div>
   </div>
@@ -79,6 +82,14 @@ export default {
       },
       set(value) {
         this.$store.commit("BGBCOLOR_COMMIT", value);
+      }
+    },
+    opacity: {
+      get() {
+        return this.$store.state.opacity;
+      },
+      set(value) {
+        this.$store.commit("OPACITY_COMMIT", value);
       }
     }
   }
