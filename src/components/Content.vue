@@ -2,7 +2,14 @@
   <div class="content">
     <div
       class="box"
-      :style="{ width: width + 'px', height: height + 'px', border: border + borderrgb, backgroundColor: bgrgb, opacity: opacity, transform: translateX + translateY + scale + rotateX + rotateY + rotateZ }"
+      :style="{
+        width: width + 'px',
+        height: height + 'px',
+        border: border + ' ' + borderstyle + ' ' + borderrgb,
+        borderRadius: borderradius,
+        backgroundColor: bgrgb,
+        opacity: opacity,
+        transform: translateX + translateY + scale + rotateX + rotateY + rotateZ }"
     ></div>
   </div>
 </template>
@@ -17,11 +24,17 @@ export default {
       return this.$store.state.height;
     },
     border() {
-      return this.$store.state.border;
+      return this.$store.state.border + "px";
+    },
+    borderradius() {
+      return this.$store.state.borderradius + "px";
+    },
+    borderstyle() {
+      return this.$store.state.borderstyle;
     },
     borderrgb() {
       return (
-        "px solid rgb(" +
+        "rgb(" +
         this.$store.state.bordercolor.r +
         ", " +
         this.$store.state.bordercolor.g +

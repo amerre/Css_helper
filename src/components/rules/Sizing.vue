@@ -16,6 +16,23 @@
         <h1>Border : {{ border }} px</h1>
         <input type="range" min="0" max="80" v-model="border">
       </div>
+      <div>
+        <h1>Border Radius : {{ borderradius }} px</h1>
+        <input type="range" min="0" max="100" v-model="borderradius">
+      </div>
+      <div>
+        <h1>Border Style</h1>
+        <select v-model="borderstyle">
+          <option value="Solid" selected>Solid</option>
+          <option value="Dotted">Dotted</option>
+          <option value="Dashed">Dashed</option>
+          <option value="Double">Double</option>
+          <option value="Groove">Groove</option>
+          <option value="Ridge">Ridge</option>
+          <option value="Inset">Inset</option>
+          <option value="Outset">Outset</option>
+        </select>
+      </div>
     </div>
   </div>
 </template>
@@ -50,6 +67,22 @@ export default {
       },
       set(value) {
         this.$store.commit("BORDER_COMMIT", value);
+      }
+    },
+    borderradius: {
+      get() {
+        return this.$store.state.borderradius;
+      },
+      set(value) {
+        this.$store.commit("BORDERRADIUS_COMMIT", value);
+      }
+    },
+    borderstyle: {
+      get() {
+        return this.$store.state.borderstyle;
+      },
+      set(value) {
+        this.$store.commit("BORDERSTYLE_COMMIT", value);
       }
     }
   }

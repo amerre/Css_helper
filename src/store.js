@@ -7,16 +7,18 @@ export default new Vuex.Store({
   state: {
     width: 80,
     height: 90,
-    border: 2,
+    border: 50,
+    borderradius: 0,
+    borderstyle: "Solid",
     bordercolor: {
-      r: 0,
+      r: 123,
       g: 0,
-      b: 0
+      b: 105
     },
     bgcolor: {
-      r: 0,
-      g: 0,
-      b: 0
+      r: 100,
+      g: 200,
+      b: 55
     },
     opacity: 1,
     translateX: 0,
@@ -50,6 +52,14 @@ export default new Vuex.Store({
     // BORDER COLOR - B
     BORDERBCOLOR_COMMIT(state, payload) {
       state.bordercolor.b = payload;
+    },
+    // BORDER RADIUS
+    BORDERRADIUS_COMMIT(state, payload) {
+      state.borderradius = payload;
+    },
+    // BORDER STYLE
+    BORDERSTYLE_COMMIT(state, payload) {
+      state.borderstyle = payload;
     },
     // BACKGROUND COLOR - R
     BGRCOLOR_COMMIT(state, payload) {
