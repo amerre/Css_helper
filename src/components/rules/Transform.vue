@@ -18,15 +18,15 @@
       </div>
       <div>
         <h1>Rotate X : {{ rotateX }} deg</h1>
-        <input type="range" min="0" max="300" v-model="rotateX">
+        <input type="range" min="0" max="360" v-model="rotateX">
       </div>
       <div>
         <h1>Rotate Y : {{ rotateY }} deg</h1>
-        <input type="range" min="0" max="300" v-model="rotateY">
+        <input type="range" min="0" max="360" v-model="rotateY">
       </div>
       <div>
         <h1>Rotate Z : {{ rotateZ }}deg</h1>
-        <input type="range" min="0" max="300" v-model="rotateZ">
+        <input type="range" min="0" max="360" v-model="rotateZ">
       </div>
     </div>
   </div>

@@ -1,0 +1,13 @@
+#credits {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  a {
+    color: inherit;
+    text-decoration: inherit;
+    font-size: 50px;
+    &:hover {
+      color: blue;
+    }
+  }
+}
