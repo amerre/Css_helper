@@ -5,9 +5,10 @@
   align-items: center;
   overflow: hidden;
   .export {
+    margin:15px;
     position: absolute;
-    bottom: 5px;
-    left: 305px;
+    bottom: 0px;
+    left: 300px;
     .exportContent {
       box-shadow: inset 0 0 5px #000000;
       padding: 15px;
@@ -27,6 +28,22 @@
       background-color: grey;
       &:hover {
         background-color: green;
+      }
+    }
+  }
+  #credits {
+    margin:15px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    display:flex;
+    height:56px;
+    a {
+      color: inherit;
+      text-decoration: inherit;
+      font-size: 50px;
+      &:hover {
+        color: blue;
       }
     }
   }

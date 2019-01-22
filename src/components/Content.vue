@@ -34,15 +34,18 @@
     :rotateY="rotateY"
     :rotateZ="rotateZ"
     ></app-export>
+    <app-credits></app-credits>
   </div>
 </template>
 
 <script>
 import Export from "./Export.vue";
+import Credits from "./Credits.vue";
 
 export default {
   components: {
-    appExport: Export
+    appExport: Export,
+    appCredits: Credits
   },
   computed: {
     width() {
