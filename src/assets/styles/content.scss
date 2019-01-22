@@ -4,18 +4,37 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  .export {
+  .foot {
+    position:absolute;
+    bottom:0;
+    left:300px;
+    right:0;
+    display:flex;
+    justify-content:space-between;
+    align-content:flex-end;
+    align-items:flex-end;
+    border:4px solid blue;
     margin:15px;
-    position: absolute;
-    bottom: 0px;
-    left: 300px;
-    .exportContent {
-      box-shadow: inset 0 0 5px #000000;
-      padding: 15px;
-      position: absolute;
-      bottom: 50px;
-      left: 0px;
-      width: calc(300px - 30px);
+    .addBoxBtn{
+      font-size: 40px;
+      padding: 0;
+      border: none;
+      background: none;
+      height: 50px;
+      width: 300px;
+      background-color: grey;
+      &:hover {
+        background-color: green;
+      }
+    }
+    .export {
+      .exportContent {
+        box-shadow: inset 0 0 5px #000000;
+        padding: 15px;
+        position: absolute;
+        bottom: 50px;
+        left: 0px;
+        width: calc(300px - 30px);
 
     }
     .exportBtn {
@@ -32,11 +51,6 @@
     }
   }
   #credits {
-    margin:15px;
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    display:flex;
     height:56px;
     a {
       color: inherit;
@@ -46,5 +60,6 @@
         color: blue;
       }
     }
+  }
   }
 }

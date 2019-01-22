@@ -1,8 +1,11 @@
 <template>
   <div class="content">
     <div
+      v-for='box in boxes'
+      :key="box"
       class="box"
       :style="{
+        color: 'white',
         width: width + 'px',
         height: height + 'px',
         border: border + 'px ' + borderstyle + ' ' + borderrgb,
@@ -18,23 +21,26 @@
         'rotateZ(' + rotateZ + 'deg)'
         }"
     ></div>
-    <app-export
-    :width="width"
-    :height="height"
-    :border="border"
-    :borderradius="borderradius"
-    :borderstyle="borderstyle"
-    :borderrgb="borderrgb"
-    :bgrgb="bgrgb"
-    :opacity="opacity"
-    :translateX="translateX"
-    :translateY="translateY"
-    :scale="scale"
-    :rotateX="rotateX"
-    :rotateY="rotateY"
-    :rotateZ="rotateZ"
-    ></app-export>
-    <app-credits></app-credits>
+    <div class="foot">
+      <app-export
+      :width="width"
+      :height="height"
+      :border="border"
+      :borderradius="borderradius"
+      :borderstyle="borderstyle"
+      :borderrgb="borderrgb"
+      :bgrgb="bgrgb"
+      :opacity="opacity"
+      :translateX="translateX"
+      :translateY="translateY"
+      :scale="scale"
+      :rotateX="rotateX"
+      :rotateY="rotateY"
+      :rotateZ="rotateZ"
+      ></app-export>
+      <button class="addBoxBtn" @click="boxes++">Add a box</button>
+      <app-credits></app-credits>
+    </div>
   </div>
 </template>
 
@@ -48,6 +54,14 @@ export default {
     appCredits: Credits
   },
   computed: {
+     boxes: {
+      get() {
+        return this.$store.state.boxes;
+      },
+      set(value) {
+        this.$store.commit("BOXES_COMMIT", value);
+      }
+    },
     width() {
       return this.$store.state.width;
     },

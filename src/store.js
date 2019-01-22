@@ -5,14 +5,15 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    boxes: 1,
     width: 80,
     height: 90,
-    border: 0,
+    border: 10,
     borderradius: 0,
     borderstyle: "solid",
     bordercolor: {
       r: 0,
-      g: 0,
+      g: 255,
       b: 0
     },
     bgcolor: {
@@ -29,6 +30,10 @@ export default new Vuex.Store({
     rotateZ: 0
   },
   mutations: {
+    // NUMBER OF BOXES
+    BOXES_COMMIT(state, payload) {
+      state.boxes = payload;
+    },
     // WIDTH
     WIDTH_COMMIT(state, payload) {
       state.width = payload;
