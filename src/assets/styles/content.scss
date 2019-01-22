@@ -4,4 +4,28 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  .export {
+    position: absolute;
+    bottom: 5px;
+    left: 305px;
+    .exportContent {
+      position: absolute;
+      bottom: 50px;
+      left: 0px;
+      width: 100%;
+      border: 2px solid red;
+    }
+    .exportBtn {
+      font-size: 40px;
+      padding: 0;
+      border: none;
+      background: none;
+      height: 50px;
+      width: 300px;
+      background-color: grey;
+      &:hover {
+        background-color: green;
+      }
+    }
+  }
 }

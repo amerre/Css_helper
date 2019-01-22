@@ -7,18 +7,18 @@ export default new Vuex.Store({
   state: {
     width: 80,
     height: 90,
-    border: 50,
+    border: 0,
     borderradius: 0,
-    borderstyle: "Solid",
+    borderstyle: "solid",
     bordercolor: {
-      r: 123,
+      r: 0,
       g: 0,
-      b: 105
+      b: 0
     },
     bgcolor: {
-      r: 100,
-      g: 200,
-      b: 55
+      r: 0,
+      g: 0,
+      b: 0
     },
     opacity: 1,
     translateX: 0,

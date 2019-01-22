@@ -11,11 +11,17 @@
         opacity: opacity,
         transform: translateX + translateY + scale + rotateX + rotateY + rotateZ }"
     ></div>
+    <app-export></app-export>
   </div>
 </template>
 
 <script>
+import Export from "./Export.vue";
+
 export default {
+  components: {
+    appExport: Export
+  },
   computed: {
     width() {
       return this.$store.state.width;

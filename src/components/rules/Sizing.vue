@@ -23,14 +23,14 @@
       <div>
         <h1>Border Style</h1>
         <select v-model="borderstyle">
-          <option value="Solid" selected>Solid</option>
-          <option value="Dotted">Dotted</option>
-          <option value="Dashed">Dashed</option>
-          <option value="Double">Double</option>
-          <option value="Groove">Groove</option>
-          <option value="Ridge">Ridge</option>
-          <option value="Inset">Inset</option>
-          <option value="Outset">Outset</option>
+          <option value="solid" selected>Solid</option>
+          <option value="dotted">Dotted</option>
+          <option value="dashed">Dashed</option>
+          <option value="double">Double</option>
+          <option value="groove">Groove</option>
+          <option value="ridge">Ridge</option>
+          <option value="inset">Inset</option>
+          <option value="outset">Outset</option>
         </select>
       </div>
     </div>
