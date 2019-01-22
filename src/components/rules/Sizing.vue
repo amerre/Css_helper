@@ -5,15 +5,15 @@
     </button>
     <div v-if="show" class="rulesWrap">
       <div>
-        <h1>Width : {{ width }}</h1>
+        <h1>Width : {{ width }} px</h1>
         <input type="range" min="0" max="200" v-model="width">
       </div>
       <div>
-        <h1>Height : {{ height }}</h1>
+        <h1>Height : {{ height }} px</h1>
         <input type="range" min="0" max="200" v-model="height">
       </div>
       <div>
-        <h1>Border : {{ border }}</h1>
+        <h1>Border : {{ border }} px</h1>
         <input type="range" min="0" max="80" v-model="border">
       </div>
     </div>
@@ -24,7 +24,7 @@
 export default {
   data() {
     return {
-      show: false
+      show: true
     };
   },
   computed: {
