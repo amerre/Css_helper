@@ -9,11 +9,13 @@
     bottom: 5px;
     left: 305px;
     .exportContent {
+      box-shadow: inset 0 0 5px #000000;
+      padding: 15px;
       position: absolute;
       bottom: 50px;
       left: 0px;
-      width: 100%;
-      border: 2px solid red;
+      width: calc(300px - 30px);
+
     }
     .exportBtn {
       font-size: 40px;
