@@ -21,7 +21,10 @@ export default new Vuex.Store({
     opacity: 1,
     translateX: 0,
     translateY: 0,
-    scale: 1
+    scale: 1,
+    rotateY: 0,
+    rotateX: 0,
+    rotateZ: 0
   },
   mutations: {
     // WIDTH
@@ -73,6 +76,15 @@ export default new Vuex.Store({
     },
     SCALE_COMMIT(state, payload) {
       state.scale = payload;
+    },
+    ROTATEX_COMMIT(state, payload) {
+      state.rotateX = payload;
+    },
+    ROTATEY_COMMIT(state, payload) {
+      state.rotateY = payload;
+    },
+    ROTATEZ_COMMIT(state, payload) {
+      state.rotateZ = payload;
     }
   },
   actions: {}

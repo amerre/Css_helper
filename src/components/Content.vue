@@ -2,7 +2,7 @@
   <div class="content">
     <div
       class="box"
-      :style="{ width: width + 'px', height: height + 'px', border: border + borderrgb, backgroundColor: bgrgb, opacity: opacity, transform: translateX + translateY + scale }"
+      :style="{ width: width + 'px', height: height + 'px', border: border + borderrgb, backgroundColor: bgrgb, opacity: opacity, transform: translateX + translateY + scale + rotateX + rotateY + rotateZ }"
     ></div>
   </div>
 </template>
@@ -52,6 +52,15 @@ export default {
     },
     scale() {
       return "scale(" + this.$store.state.scale + ")";
+    },
+    rotateX() {
+      return "rotateX(" + this.$store.state.rotateX + "deg)";
+    },
+    rotateY() {
+      return "rotateY(" + this.$store.state.rotateY + "deg)";
+    },
+    rotateZ() {
+      return "rotateZ(" + this.$store.state.rotateZ + "deg)";
     }
   }
 };
