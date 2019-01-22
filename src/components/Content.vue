@@ -5,13 +5,35 @@
       :style="{
         width: width + 'px',
         height: height + 'px',
-        border: border + ' ' + borderstyle + ' ' + borderrgb,
-        borderRadius: borderradius,
+        border: border + 'px ' + borderstyle + ' ' + borderrgb,
+        borderRadius: borderradius + 'px',
         backgroundColor: bgrgb,
         opacity: opacity,
-        transform: translateX + translateY + scale + rotateX + rotateY + rotateZ }"
+        transform:
+        'translateX(' + translateX + 'px)' +
+        'translateY(' + translateY + 'px)' +
+        'scale(' + scale + ')' +
+        'rotateX(' + rotateX + 'deg)' +
+        'rotateY(' + rotateY + 'deg)' +
+        'rotateZ(' + rotateZ + 'deg)'
+        }"
     ></div>
-    <app-export></app-export>
+    <app-export
+    :width="width"
+    :height="height"
+    :border="border"
+    :borderradius="borderradius"
+    :borderstyle="borderstyle"
+    :borderrgb="borderrgb"
+    :bgrgb="bgrgb"
+    :opacity="opacity"
+    :translateX="translateX"
+    :translateY="translateY"
+    :scale="scale"
+    :rotateX="rotateX"
+    :rotateY="rotateY"
+    :rotateZ="rotateZ"
+    ></app-export>
   </div>
 </template>
 
@@ -30,10 +52,10 @@ export default {
       return this.$store.state.height;
     },
     border() {
-      return this.$store.state.border + "px";
+      return this.$store.state.border;
     },
     borderradius() {
-      return this.$store.state.borderradius + "px";
+      return this.$store.state.borderradius;
     },
     borderstyle() {
       return this.$store.state.borderstyle;
@@ -64,22 +86,22 @@ export default {
       return this.$store.state.opacity;
     },
     translateX() {
-      return "translateX(" + this.$store.state.translateX + "px)";
+      return this.$store.state.translateX;
     },
     translateY() {
-      return "translateY(" + this.$store.state.translateY + "px)";
+      return this.$store.state.translateY;
     },
     scale() {
-      return "scale(" + this.$store.state.scale + ")";
+      return this.$store.state.scale;
     },
     rotateX() {
-      return "rotateX(" + this.$store.state.rotateX + "deg)";
+      return this.$store.state.rotateX;
     },
     rotateY() {
-      return "rotateY(" + this.$store.state.rotateY + "deg)";
+      return this.$store.state.rotateY;
     },
     rotateZ() {
-      return "rotateZ(" + this.$store.state.rotateZ + "deg)";
+      return this.$store.state.rotateZ;
     }
   }
 };
