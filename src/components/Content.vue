@@ -2,7 +2,7 @@
   <div class="content">
     <div
       class="box"
-      :style="{ width: width + 'px', height: height + 'px', border: border + borderrgb, backgroundColor: bgrgb, opacity: opacity }"
+      :style="{ width: width + 'px', height: height + 'px', border: border + borderrgb, backgroundColor: bgrgb, opacity: opacity, transform: translateX + translateY + scale }"
     ></div>
   </div>
 </template>
@@ -43,6 +43,15 @@ export default {
     },
     opacity() {
       return this.$store.state.opacity;
+    },
+    translateX() {
+      return "translateX(" + this.$store.state.translateX + "px)";
+    },
+    translateY() {
+      return "translateY(" + this.$store.state.translateY + "px)";
+    },
+    scale() {
+      return "scale(" + this.$store.state.scale + ")";
     }
   }
 };

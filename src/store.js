@@ -18,7 +18,10 @@ export default new Vuex.Store({
       g: 0,
       b: 0
     },
-    opacity: 1
+    opacity: 1,
+    translateX: 0,
+    translateY: 0,
+    scale: 1
   },
   mutations: {
     // WIDTH
@@ -60,6 +63,16 @@ export default new Vuex.Store({
     // OPACITY
     OPACITY_COMMIT(state, payload) {
       state.opacity = payload;
+    },
+    // TRANSFORM
+    TRANSLATEX_COMMIT(state, payload) {
+      state.translateX = payload;
+    },
+    TRANSLATEY_COMMIT(state, payload) {
+      state.translateY = payload;
+    },
+    SCALE_COMMIT(state, payload) {
+      state.scale = payload;
     }
   },
   actions: {}
