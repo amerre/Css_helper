@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div
-      v-for='box in boxes'
+      v-for="box in boxes"
       :key="box"
       class="box"
       :style="{
@@ -22,39 +22,36 @@
         }"
     ></div>
     <div class="foot">
-      <app-export
-      :width="width"
-      :height="height"
-      :border="border"
-      :borderradius="borderradius"
-      :borderstyle="borderstyle"
-      :borderrgb="borderrgb"
-      :bgrgb="bgrgb"
-      :opacity="opacity"
-      :translateX="translateX"
-      :translateY="translateY"
-      :scale="scale"
-      :rotateX="rotateX"
-      :rotateY="rotateY"
-      :rotateZ="rotateZ"
-      ></app-export>
       <button class="addBoxBtn" @click="boxes++">Add a box</button>
-      <app-credits></app-credits>
+      <app-export
+        :width="width"
+        :height="height"
+        :border="border"
+        :borderradius="borderradius"
+        :borderstyle="borderstyle"
+        :borderrgb="borderrgb"
+        :bgrgb="bgrgb"
+        :opacity="opacity"
+        :translateX="translateX"
+        :translateY="translateY"
+        :scale="scale"
+        :rotateX="rotateX"
+        :rotateY="rotateY"
+        :rotateZ="rotateZ"
+      ></app-export>
     </div>
   </div>
 </template>
 
 <script>
 import Export from "./Export.vue";
-import Credits from "./Credits.vue";
 
 export default {
   components: {
-    appExport: Export,
-    appCredits: Credits
+    appExport: Export
   },
   computed: {
-     boxes: {
+    boxes: {
       get() {
         return this.$store.state.boxes;
       },

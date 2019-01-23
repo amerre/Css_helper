@@ -1,7 +1,7 @@
 <template>
   <div>
-    <button @click="show = !show">
-      <h1>Sizing</h1>
+    <button :class="{ active: show }" @click="show = !show">
+      <h1 class="rulesName">Sizing</h1>
     </button>
     <div v-if="show" class="rulesWrap">
       <div>
