@@ -5,23 +5,23 @@
     </button>
     <div v-if="show" class="rulesWrap">
       <div>
-        <h1>Border-color</h1>
-        <h1>R:{{ borderrcolor }}</h1>
+        <h2>Border-color</h2>
+        <h2>R:{{ borderrcolor }}</h2>
         <input type="range" min="0" max="255" v-model="borderrcolor">
-        <h1>G:{{ bordergcolor }}</h1>
+        <h2>G:{{ bordergcolor }}</h2>
         <input type="range" min="0" max="255" v-model="bordergcolor">
-        <h1>B:{{ borderbcolor }}</h1>
+        <h2>B:{{ borderbcolor }}</h2>
         <input type="range" min="0" max="255" v-model="borderbcolor">
 
-        <h1>Bg-color</h1>
-        <h1>R:{{ bgrcolor }}</h1>
+        <h2>Bg-color</h2>
+        <h2>R:{{ bgrcolor }}</h2>
         <input type="range" min="0" max="255" v-model="bgrcolor">
-        <h1>G:{{ bggcolor }}</h1>
+        <h2>G:{{ bggcolor }}</h2>
         <input type="range" min="0" max="255" v-model="bggcolor">
-        <h1>B:{{ bgbcolor }}</h1>
+        <h2>B:{{ bgbcolor }}</h2>
         <input type="range" min="0" max="255" v-model="bgbcolor">
 
-        <h1>Opacity : {{ opacity }}</h1>
+        <h2>Opacity : {{ opacity }}</h2>
         <input type="range" min="0" max="1" v-model="opacity" step="0.1">
       </div>
     </div>

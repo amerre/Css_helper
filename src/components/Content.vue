@@ -21,9 +21,17 @@
         'rotateZ(' + rotateZ + 'deg)'
         }"
     ></div>
-    <div class="foot">
-      <button class="addBoxBtn" @click="boxes++">Add a box</button>
+    <div id="footer">
+      <button id="addABox" @click="boxes++">
+        <h1>Add a box</h1>
+      </button>
+      <button @click="show = !show">
+        <h1 v-if="!show">Export CSS</h1>
+        <h1 v-if="show">Close export</h1>
+      </button>
+      <!-- TODO: Transition a ajouter -->
       <app-export
+        v-if="show"
         :width="width"
         :height="height"
         :border="border"
@@ -47,6 +55,11 @@
 import Export from "./Export.vue";
 
 export default {
+  data() {
+    return {
+      show: false
+    };
+  },
   components: {
     appExport: Export
   },

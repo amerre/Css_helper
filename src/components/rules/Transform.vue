@@ -5,27 +5,27 @@
     </button>
     <div v-if="show" class="rulesWrap">
       <div>
-        <h1>Translate X : {{ translateX }} px</h1>
+        <h2>Translate X : {{ translateX }} px</h2>
         <input type="range" min="0" max="200" v-model="translateX">
       </div>
       <div>
-        <h1>Translate Y : {{ translateY }} px</h1>
+        <h2>Translate Y : {{ translateY }} px</h2>
         <input type="range" min="0" max="200" v-model="translateY">
       </div>
       <div>
-        <h1>Scale : * {{ scale }}</h1>
+        <h2>Scale : * {{ scale }}</h2>
         <input type="range" min="0" max="5" step="0.1" v-model="scale">
       </div>
       <div>
-        <h1>Rotate X : {{ rotateX }} deg</h1>
+        <h2>Rotate X : {{ rotateX }} deg</h2>
         <input type="range" min="0" max="360" v-model="rotateX">
       </div>
       <div>
-        <h1>Rotate Y : {{ rotateY }} deg</h1>
+        <h2>Rotate Y : {{ rotateY }} deg</h2>
         <input type="range" min="0" max="360" v-model="rotateY">
       </div>
       <div>
-        <h1>Rotate Z : {{ rotateZ }}deg</h1>
+        <h2>Rotate Z : {{ rotateZ }}deg</h2>
         <input type="range" min="0" max="360" v-model="rotateZ">
       </div>
     </div>

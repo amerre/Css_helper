@@ -5,23 +5,23 @@
     </button>
     <div v-if="show" class="rulesWrap">
       <div>
-        <h1>Width : {{ width }} px</h1>
+        <h2>Width : {{ width }} px</h2>
         <input type="range" min="0" max="200" v-model="width">
       </div>
       <div>
-        <h1>Height : {{ height }} px</h1>
+        <h2>Height : {{ height }} px</h2>
         <input type="range" min="0" max="200" v-model="height">
       </div>
       <div>
-        <h1>Border : {{ border }} px</h1>
+        <h2>Border : {{ border }} px</h2>
         <input type="range" min="0" max="80" v-model="border">
       </div>
       <div>
-        <h1>Border Radius : {{ borderradius }} px</h1>
+        <h2>Border Radius : {{ borderradius }} px</h2>
         <input type="range" min="0" max="100" v-model="borderradius">
       </div>
       <div>
-        <h1>Border Style</h1>
+        <h2>Border Style</h2>
         <select v-model="borderstyle">
           <option value="solid" selected>Solid</option>
           <option value="dotted">Dotted</option>

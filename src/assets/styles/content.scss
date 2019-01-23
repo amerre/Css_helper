@@ -4,74 +4,28 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  .foot {
-    position: absolute;
-    bottom: 0;
-    left: 300px;
-    right: 0;
+  #footer {
     display: flex;
-    justify-content: space-between;
-    align-content: flex-end;
-    align-items: flex-end;
-    margin: 15px;
+    position: absolute;
+    bottom: 0px;
     button {
-      font-weight: 900;
-      font-family: "Raleway", sans-serif;
-      background-color: $main-color !important;
-      &:hover {
-        color: white;
-      }
-      &:active {
-        background-color: black !important;
-        color: white;
-      }
-    }
-    .addBoxBtn {
-      font-size: 40px;
-      padding: 0;
+      margin: 30px 15px;
+      padding: 15px 25px;
+      font-size: 24px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      background-color: $yellow;
       border: none;
-      background: none;
-      height: 50px;
-      width: 300px;
-      background-color: grey;
-      &:hover {
-        background-color: green;
-      }
+      border-radius: 15px;
+      box-shadow: 0 9px $dark-yellow;
     }
-    .export {
-      .exportContent {
-        box-shadow: inset 0px 0px 77px -52px rgba(0, 0, 0, 0.65);
-        padding: 15px;
-        position: absolute;
-        bottom: 45px;
-        z-index: -1;
-        right: 0px;
-        width: calc(300px - 30px);
-        background-color: white;
-      }
-      .exportBtn {
-        font-size: 40px;
-        padding: 0;
-        border: none;
-        background: none;
-        height: 50px;
-        width: 300px;
-        background-color: grey;
-        &:hover {
-          background-color: green;
-        }
-      }
+    button:hover {
+      background-color: $light-yellow;
     }
-    #credits {
-      height: 56px;
-      a {
-        color: inherit;
-        text-decoration: inherit;
-        font-size: 50px;
-        &:hover {
-          color: blue;
-        }
-      }
+    button:active {
+      box-shadow: 0 5px $dark-yellow;
+      transform: translateY(4px);
     }
   }
 }
