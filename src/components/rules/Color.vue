@@ -3,28 +3,30 @@
     <button :class="{ active: show }" @click="show = !show">
       <h1 class="rulesName">Color</h1>
     </button>
-    <div v-if="show" class="rulesWrap">
-      <div>
-        <h2>Border-color</h2>
-        <h2>R:{{ borderrcolor }}</h2>
-        <input type="range" min="0" max="255" v-model="borderrcolor">
-        <h2>G:{{ bordergcolor }}</h2>
-        <input type="range" min="0" max="255" v-model="bordergcolor">
-        <h2>B:{{ borderbcolor }}</h2>
-        <input type="range" min="0" max="255" v-model="borderbcolor">
+    <transition name="roll" mode="out-in">
+      <div v-if="show" class="rulesWrap">
+        <div>
+          <h2>Border-color</h2>
+          <h2>R:{{ borderrcolor }}</h2>
+          <input type="range" min="0" max="255" v-model="borderrcolor">
+          <h2>G:{{ bordergcolor }}</h2>
+          <input type="range" min="0" max="255" v-model="bordergcolor">
+          <h2>B:{{ borderbcolor }}</h2>
+          <input type="range" min="0" max="255" v-model="borderbcolor">
 
-        <h2>Bg-color</h2>
-        <h2>R:{{ bgrcolor }}</h2>
-        <input type="range" min="0" max="255" v-model="bgrcolor">
-        <h2>G:{{ bggcolor }}</h2>
-        <input type="range" min="0" max="255" v-model="bggcolor">
-        <h2>B:{{ bgbcolor }}</h2>
-        <input type="range" min="0" max="255" v-model="bgbcolor">
+          <h2>Bg-color</h2>
+          <h2>R:{{ bgrcolor }}</h2>
+          <input type="range" min="0" max="255" v-model="bgrcolor">
+          <h2>G:{{ bggcolor }}</h2>
+          <input type="range" min="0" max="255" v-model="bggcolor">
+          <h2>B:{{ bgbcolor }}</h2>
+          <input type="range" min="0" max="255" v-model="bgbcolor">
 
-        <h2>Opacity : {{ opacity }}</h2>
-        <input type="range" min="0" max="1" v-model="opacity" step="0.1">
+          <h2>Opacity : {{ opacity }}</h2>
+          <input type="range" min="0" max="1" v-model="opacity" step="0.1">
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -95,3 +97,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.roll-enter-to,
+.roll-leave {
+  height: 392.1px;
+}
+</style>

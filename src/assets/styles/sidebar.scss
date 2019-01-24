@@ -6,6 +6,7 @@
   justify-content: space-between;
   z-index: 1;
   text-align: center;
+  background-color: white;
   .rules {
     input {
       margin: 5px;
@@ -24,7 +25,22 @@
       border-bottom: 3px solid $dark-yellow;
     }
     .rulesWrap {
+      z-index: -1;
       padding: 15px;
+      overflow: hidden;
+    }
+    .roll-enter-active,
+    .roll-leave-active {
+      transition: all 0.2s ease;
+    }
+    .roll-enter,
+    .roll-leave-to {
+      height: 0px;
+      opacity: 0;
+    }
+    .roll-enter-to,
+    .roll-leave {
+      opacity: 1;
     }
   }
 }
