@@ -29,26 +29,26 @@
         <h1 v-if="!show">Export CSS</h1>
         <h1 v-if="show">Close export</h1>
       </button>
-      <transition name="fadeAndSlide">
-        <app-export
-          v-if="show"
-          :width="width"
-          :height="height"
-          :border="border"
-          :borderradius="borderradius"
-          :borderstyle="borderstyle"
-          :borderrgb="borderrgb"
-          :bgrgb="bgrgb"
-          :opacity="opacity"
-          :translateX="translateX"
-          :translateY="translateY"
-          :scale="scale"
-          :rotateX="rotateX"
-          :rotateY="rotateY"
-          :rotateZ="rotateZ"
-        ></app-export>
-      </transition>
     </div>
+    <transition name="fadeAndSlide" mode="out-in">
+      <app-export
+        v-if="show"
+        :width="width"
+        :height="height"
+        :border="border"
+        :borderradius="borderradius"
+        :borderstyle="borderstyle"
+        :borderrgb="borderrgb"
+        :bgrgb="bgrgb"
+        :opacity="opacity"
+        :translateX="translateX"
+        :translateY="translateY"
+        :scale="scale"
+        :rotateX="rotateX"
+        :rotateY="rotateY"
+        :rotateZ="rotateZ"
+      ></app-export>
+    </transition>
   </div>
 </template>
 
@@ -136,35 +136,23 @@ export default {
 </script>
 
 <style lang="scss">
-.fadeAndSlide-enter-active {
-  animation: slideIn 1s;
+.fadeAndSlide-enter {
+  opacity: 0;
+  transform: translateX(-200px);
 }
-.fadeAndSlide-leave-active {
-  animation: slideOut 1s;
+.fadeAndSlide-enter-to {
+  opacity: 1;
 }
 
-.fadeAndSlide-enter,
+.fadeAndSlide-leave {
+  opacity: 1;
+}
 .fadeAndSlide-leave-to {
   opacity: 0;
+  transform: translateY(200px);
 }
-
-@keyframes slideIn {
-  from {
-    left: -300px;
-    opacity: 0;
-  }
-  to {
-    left: 10px;
-    opacity: 1;
-  }
-}
-
-@keyframes slideOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+.fadeAndSlide-enter-active,
+.fadeAndSlide-leave-active {
+  transition: all 0.7s ease;
 }
 </style>
