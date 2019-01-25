@@ -27,7 +27,11 @@ export default new Vuex.Store({
     scale: 1,
     rotateY: 0,
     rotateX: 0,
-    rotateZ: 0
+    rotateZ: 0,
+    shadowX: 10,
+    shadowY: 10,
+    spread: 0,
+    blur: 0
   },
   mutations: {
     // NUMBER OF BOXES
@@ -100,7 +104,19 @@ export default new Vuex.Store({
     },
     ROTATEZ_COMMIT(state, payload) {
       state.rotateZ = payload;
+    },
+    // SHADOW
+    SHADOWX_COMMIT(state, payload) {
+      state.shadowX = payload;
+    },
+    SHADOWY_COMMIT(state, payload) {
+      state.shadowY = payload;
+    },
+    SPREAD_COMMIT(state, payload) {
+      state.spread = payload;
+    },
+    BLUR_COMMIT(state, payload) {
+      state.blur = payload;
     }
-  },
-  actions: {}
+  }
 });

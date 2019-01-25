@@ -2,6 +2,7 @@
   <div class="exportContent">div {
     <p>width: {{ width }} px;</p>
     <p>height: {{ height }} px;</p>
+    <!-- TODO: Update it -->
     <p v-if="border != 0">border: {{ border }}px {{ borderstyle }} {{ borderrgb }};</p>
     <p v-if="borderradius != 0">border-radius: {{ borderradius }}px;</p>
     <p v-if="bgrgb != 'rgb(0, 0, 0)'">background-color: {{ bgrgb }};</p>

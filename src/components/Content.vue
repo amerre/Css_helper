@@ -18,7 +18,8 @@
         'scale(' + scale + ')' +
         'rotateX(' + rotateX + 'deg)' +
         'rotateY(' + rotateY + 'deg)' +
-        'rotateZ(' + rotateZ + 'deg)'
+        'rotateZ(' + rotateZ + 'deg)',
+        boxShadow: shadowX + 'px ' + shadowY + 'px ' + blur + 'px ' + spread + 'px blue'
         }"
     ></div>
     <div id="footer">
@@ -47,6 +48,10 @@
         :rotateX="rotateX"
         :rotateY="rotateY"
         :rotateZ="rotateZ"
+        :shadowX="shadowX"
+        :shadowY="shadowY"
+        :spread="spread"
+        :blur="blur"
       ></app-export>
     </transition>
   </div>
@@ -130,6 +135,18 @@ export default {
     },
     rotateZ() {
       return this.$store.state.rotateZ;
+    },
+    shadowX() {
+      return this.$store.state.shadowX;
+    },
+    shadowY() {
+      return this.$store.state.shadowY;
+    },
+    spread() {
+      return this.$store.state.spread;
+    },
+    blur() {
+      return this.$store.state.blur;
     }
   }
 };
