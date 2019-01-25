@@ -31,7 +31,13 @@ export default new Vuex.Store({
     shadowX: 10,
     shadowY: 10,
     spread: 0,
-    blur: 0
+    blur: 0,
+    shadowcolor: {
+      r: 0,
+      g: 0,
+      b: 0,
+      a: 1
+    }
   },
   mutations: {
     // NUMBER OF BOXES
@@ -117,6 +123,18 @@ export default new Vuex.Store({
     },
     BLUR_COMMIT(state, payload) {
       state.blur = payload;
+    },
+    SHADOWRCOLOR_COMMIT(state, payload) {
+      state.shadowcolor.r = payload;
+    },
+    SHADOWGCOLOR_COMMIT(state, payload) {
+      state.shadowcolor.g = payload;
+    },
+    SHADOWBCOLOR_COMMIT(state, payload) {
+      state.shadowcolor.b = payload;
+    },
+    SHADOWOPACITY_COMMIT(state, payload) {
+      state.shadowcolor.a = payload;
     }
   }
 });

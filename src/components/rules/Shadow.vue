@@ -6,14 +6,24 @@
     <transition name="roll" mode="out-in">
       <div v-if="show" class="rulesWrap">
         <div>
-          <h2>Shadow X :{{ shadowX }}</h2>
+          <h2>Shadow X : {{ shadowX }}</h2>
           <input type="range" min="0" max="255" v-model="shadowX">
-          <h2>Shadow Y :{{ shadowY }}</h2>
+          <h2>Shadow Y : {{ shadowY }}</h2>
           <input type="range" min="0" max="255" v-model="shadowY">
-          <h2>Spread :{{ spread }}</h2>
-          <input type="range" min="0" max="255" v-model="spread">
-          <h2>Blur :{{ blur }}</h2>
+          <h2>Spread : {{ spread }}</h2>
+          <input type="range" min="-50" max="255" v-model="spread">
+          <h2>Blur : {{ blur }}</h2>
           <input type="range" min="0" max="255" v-model="blur">
+          <!-- TODO: INSET, color, alpha on color rgb-->
+          <h2>Color</h2>
+          <h2>R : {{ shadowrcolor }}</h2>
+          <input type="range" min="0" max="255" v-model="shadowrcolor">
+          <h2>G : {{ shadowgcolor }}</h2>
+          <input type="range" min="0" max="255" v-model="shadowgcolor">
+          <h2>B : {{ shadowbcolor }}</h2>
+          <input type="range" min="0" max="255" v-model="shadowbcolor">
+          <h2>Opacity : {{ shadowopacity }}</h2>
+          <input type="range" min="0" max="1" step="0.1" v-model="shadowopacity">
         </div>
       </div>
     </transition>
@@ -24,7 +34,7 @@
 export default {
   data() {
     return {
-      show: false
+      show: true
     };
   },
   computed: {
@@ -58,6 +68,38 @@ export default {
       },
       set(value) {
         this.$store.commit("BLUR_COMMIT", value);
+      }
+    },
+    shadowrcolor: {
+      get() {
+        return this.$store.state.shadowcolor.r;
+      },
+      set(value) {
+        this.$store.commit("SHADOWRCOLOR_COMMIT", value);
+      }
+    },
+    shadowgcolor: {
+      get() {
+        return this.$store.state.shadowcolor.g;
+      },
+      set(value) {
+        this.$store.commit("SHADOWGCOLOR_COMMIT", value);
+      }
+    },
+    shadowbcolor: {
+      get() {
+        return this.$store.state.shadowcolor.b;
+      },
+      set(value) {
+        this.$store.commit("SHADOWBCOLOR_COMMIT", value);
+      }
+    },
+    shadowopacity: {
+      get() {
+        return this.$store.state.shadowcolor.a;
+      },
+      set(value) {
+        this.$store.commit("SHADOWOPACITY_COMMIT", value);
       }
     }
   }

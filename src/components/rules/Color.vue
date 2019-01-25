@@ -7,19 +7,19 @@
       <div v-if="show" class="rulesWrap">
         <div>
           <h2>Border-color</h2>
-          <h2>R:{{ borderrcolor }}</h2>
+          <h2>R : {{ borderrcolor }}</h2>
           <input type="range" min="0" max="255" v-model="borderrcolor">
-          <h2>G:{{ bordergcolor }}</h2>
+          <h2>G : {{ bordergcolor }}</h2>
           <input type="range" min="0" max="255" v-model="bordergcolor">
-          <h2>B:{{ borderbcolor }}</h2>
+          <h2>B : {{ borderbcolor }}</h2>
           <input type="range" min="0" max="255" v-model="borderbcolor">
 
           <h2>Bg-color</h2>
-          <h2>R:{{ bgrcolor }}</h2>
+          <h2>R : {{ bgrcolor }}</h2>
           <input type="range" min="0" max="255" v-model="bgrcolor">
-          <h2>G:{{ bggcolor }}</h2>
+          <h2>G : {{ bggcolor }}</h2>
           <input type="range" min="0" max="255" v-model="bggcolor">
-          <h2>B:{{ bgbcolor }}</h2>
+          <h2>B : {{ bgbcolor }}</h2>
           <input type="range" min="0" max="255" v-model="bgbcolor">
 
           <h2>Opacity : {{ opacity }}</h2>

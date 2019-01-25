@@ -19,7 +19,7 @@
         'rotateX(' + rotateX + 'deg)' +
         'rotateY(' + rotateY + 'deg)' +
         'rotateZ(' + rotateZ + 'deg)',
-        boxShadow: shadowX + 'px ' + shadowY + 'px ' + blur + 'px ' + spread + 'px blue'
+        boxShadow: shadowX + 'px ' + shadowY + 'px ' + blur + 'px ' + spread + 'px ' + shadowrgba
         }"
     ></div>
     <div id="footer">
@@ -52,6 +52,7 @@
         :shadowY="shadowY"
         :spread="spread"
         :blur="blur"
+        :shadowrgba="shadowrgba"
       ></app-export>
     </transition>
   </div>
@@ -147,6 +148,19 @@ export default {
     },
     blur() {
       return this.$store.state.blur;
+    },
+    shadowrgba() {
+      return (
+        "rgba(" +
+        this.$store.state.shadowcolor.r +
+        ", " +
+        this.$store.state.shadowcolor.g +
+        ", " +
+        this.$store.state.shadowcolor.b +
+        ", " +
+        this.$store.state.shadowcolor.a +
+        ")"
+      );
     }
   }
 };
