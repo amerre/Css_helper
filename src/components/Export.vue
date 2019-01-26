@@ -1,5 +1,7 @@
 <template>
   <div class="exportContent">div {
+    <br>
+    <br>
     <p>width: {{ width }};</p>
     <p>height: {{ height }};</p>
     <p v-if="borderopacity != 0">border: {{ border }};</p>
@@ -12,7 +14,8 @@
     <p v-if="rotateY != 0">transform: rotateY({{ rotateY }}px);</p>
     <p v-if="rotateZ != 0">transform: rotateZ({{ rotateZ }}px);</p>
     <p v-if="shadowopacity != 0">box-shadow: {{ shadow }}</p>
-    <p v-if="margin != '0px 0px 0px 0px'">margin: {{ margin }}</p>}
+    <p v-if="margin != '0px 0px 0px 0px'">margin: {{ margin }}</p>
+    <br>}
   </div>
 </template>
 

@@ -16,7 +16,7 @@
         }"
     ></div>
     <div id="footer">
-      <button id="addABox" @click="addBox">
+      <button id="addABox" @click="boxes++">
         <h1>Add a box</h1>
       </button>
       <button @click="show = !show">
@@ -52,13 +52,6 @@
 import Export from "./Export.vue";
 
 export default {
-  methods: {
-    addBox() {
-      if (this.boxes < 3) {
-        this.boxes++;
-      }
-    }
-  },
   data() {
     return {
       show: false
