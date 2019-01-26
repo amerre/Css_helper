@@ -8,9 +8,9 @@
         color: 'white',
         width: width + 'px',
         height: height + 'px',
-        border: border + 'px ' + borderstyle + ' ' + borderrgb,
+        border: border + 'px ' + borderstyle + ' ' + borderrgba,
         borderRadius: borderradius + 'px',
-        backgroundColor: bgrgb,
+        backgroundColor: bgrgba,
         opacity: opacity,
         transform:
         'translateX(' + translateX + 'px)' +
@@ -19,7 +19,7 @@
         'rotateX(' + rotateX + 'deg)' +
         'rotateY(' + rotateY + 'deg)' +
         'rotateZ(' + rotateZ + 'deg)',
-        boxShadow: shadowX + 'px ' + shadowY + 'px ' + blur + 'px ' + spread + 'px ' + shadowrgba
+        boxShadow: shadow
         }"
     ></div>
     <div id="footer">
@@ -39,8 +39,9 @@
         :border="border"
         :borderradius="borderradius"
         :borderstyle="borderstyle"
-        :borderrgb="borderrgb"
-        :bgrgb="bgrgb"
+        :borderrgba="borderrgba"
+        :bgrgba="bgrgba"
+        :borderopacity="this.$store.state.bordercolor.a"
         :opacity="opacity"
         :translateX="translateX"
         :translateY="translateY"
@@ -48,11 +49,8 @@
         :rotateX="rotateX"
         :rotateY="rotateY"
         :rotateZ="rotateZ"
-        :shadowX="shadowX"
-        :shadowY="shadowY"
-        :spread="spread"
-        :blur="blur"
-        :shadowrgba="shadowrgba"
+        :shadowopacity="this.$store.state.shadowcolor.a"
+        :shadow="shadow"
       ></app-export>
     </transition>
   </div>
@@ -94,25 +92,29 @@ export default {
     borderstyle() {
       return this.$store.state.borderstyle;
     },
-    borderrgb() {
+    borderrgba() {
       return (
-        "rgb(" +
+        "rgba(" +
         this.$store.state.bordercolor.r +
         ", " +
         this.$store.state.bordercolor.g +
         ", " +
         this.$store.state.bordercolor.b +
+        ", " +
+        this.$store.state.bordercolor.a +
         ")"
       );
     },
-    bgrgb() {
+    bgrgba() {
       return (
-        "rgb(" +
+        "rgba(" +
         this.$store.state.bgcolor.r +
         ", " +
         this.$store.state.bgcolor.g +
         ", " +
         this.$store.state.bgcolor.b +
+        ", " +
+        this.$store.state.bgcolor.a +
         ")"
       );
     },
@@ -137,20 +139,19 @@ export default {
     rotateZ() {
       return this.$store.state.rotateZ;
     },
-    shadowX() {
-      return this.$store.state.shadowX;
-    },
-    shadowY() {
-      return this.$store.state.shadowY;
-    },
-    spread() {
-      return this.$store.state.spread;
-    },
-    blur() {
-      return this.$store.state.blur;
-    },
-    shadowrgba() {
+    // TODO:
+    shadow() {
       return (
+        this.$store.state.shadowstyle +
+        " " +
+        this.$store.state.shadowX +
+        "px " +
+        this.$store.state.shadowY +
+        "px " +
+        this.$store.state.blur +
+        "px " +
+        this.$store.state.spread +
+        "px " +
         "rgba(" +
         this.$store.state.shadowcolor.r +
         ", " +

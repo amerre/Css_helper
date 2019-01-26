@@ -5,35 +5,29 @@
     </button>
     <transition name="roll" mode="out-in">
       <div v-if="show" class="rulesWrap">
-        <div>
-          <h2>Width : {{ width }} px</h2>
-          <input type="range" min="0" max="200" v-model="width">
-        </div>
-        <div>
-          <h2>Height : {{ height }} px</h2>
-          <input type="range" min="0" max="200" v-model="height">
-        </div>
-        <div>
-          <h2>Border : {{ border }} px</h2>
-          <input type="range" min="0" max="80" v-model="border">
-        </div>
-        <div>
-          <h2>Border Radius : {{ borderradius }} px</h2>
-          <input type="range" min="0" max="100" v-model="borderradius">
-        </div>
-        <div>
-          <h2>Border Style</h2>
-          <select v-model="borderstyle">
-            <option value="solid" selected>Solid</option>
-            <option value="dotted">Dotted</option>
-            <option value="dashed">Dashed</option>
-            <option value="double">Double</option>
-            <option value="groove">Groove</option>
-            <option value="ridge">Ridge</option>
-            <option value="inset">Inset</option>
-            <option value="outset">Outset</option>
-          </select>
-        </div>
+        <h2>Width : {{ width }} px</h2>
+        <input type="range" min="0" max="200" v-model="width">
+
+        <h2>Height : {{ height }} px</h2>
+        <input type="range" min="0" max="200" v-model="height">
+
+        <h2>Border : {{ border }} px</h2>
+        <input type="range" min="0" max="80" v-model="border">
+
+        <h2>Border Radius : {{ borderradius }} px</h2>
+        <input type="range" min="0" max="100" v-model="borderradius">
+
+        <h2>Border Style</h2>
+        <select v-model="borderstyle">
+          <option value="solid" selected>Solid</option>
+          <option value="dotted">Dotted</option>
+          <option value="dashed">Dashed</option>
+          <option value="double">Double</option>
+          <option value="groove">Groove</option>
+          <option value="ridge">Ridge</option>
+          <option value="inset">Inset</option>
+          <option value="outset">Outset</option>
+        </select>
       </div>
     </transition>
   </div>

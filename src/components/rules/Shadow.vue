@@ -14,7 +14,12 @@
           <input type="range" min="-50" max="255" v-model="spread">
           <h2>Blur : {{ blur }}</h2>
           <input type="range" min="0" max="255" v-model="blur">
-          <!-- TODO: INSET, color, alpha on color rgb-->
+          <h2>Style</h2>
+          <select v-model="shadowstyle">
+            <option value selected>Outline</option>
+            <option value="inset">Inset</option>
+          </select>
+
           <h2>Color</h2>
           <h2>R : {{ shadowrcolor }}</h2>
           <input type="range" min="0" max="255" v-model="shadowrcolor">
@@ -68,6 +73,14 @@ export default {
       },
       set(value) {
         this.$store.commit("BLUR_COMMIT", value);
+      }
+    },
+    shadowstyle: {
+      get() {
+        return this.$store.state.shadowstyle;
+      },
+      set(value) {
+        this.$store.commit("SHADOWSTYLE_COMMIT", value);
       }
     },
     shadowrcolor: {

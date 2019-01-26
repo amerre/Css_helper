@@ -14,12 +14,14 @@ export default new Vuex.Store({
     bordercolor: {
       r: 0,
       g: 255,
-      b: 0
+      b: 0,
+      a: 1
     },
     bgcolor: {
       r: 0,
       g: 0,
-      b: 0
+      b: 0,
+      a: 1
     },
     opacity: 1,
     translateX: 0,
@@ -32,6 +34,7 @@ export default new Vuex.Store({
     shadowY: 10,
     spread: 0,
     blur: 0,
+    shadowstyle: "",
     shadowcolor: {
       r: 0,
       g: 0,
@@ -68,6 +71,10 @@ export default new Vuex.Store({
     BORDERBCOLOR_COMMIT(state, payload) {
       state.bordercolor.b = payload;
     },
+    // BORDER COLOR - A
+    BORDERACOLOR_COMMIT(state, payload) {
+      state.bordercolor.a = payload;
+    },
     // BORDER RADIUS
     BORDERRADIUS_COMMIT(state, payload) {
       state.borderradius = payload;
@@ -88,9 +95,9 @@ export default new Vuex.Store({
     BGBCOLOR_COMMIT(state, payload) {
       state.bgcolor.b = payload;
     },
-    // OPACITY
-    OPACITY_COMMIT(state, payload) {
-      state.opacity = payload;
+    // BORDER COLOR - A
+    BGACOLOR_COMMIT(state, payload) {
+      state.bgcolor.a = payload;
     },
     // TRANSFORM
     TRANSLATEX_COMMIT(state, payload) {
@@ -123,6 +130,9 @@ export default new Vuex.Store({
     },
     BLUR_COMMIT(state, payload) {
       state.blur = payload;
+    },
+    SHADOWSTYLE_COMMIT(state, payload) {
+      state.shadowstyle = payload;
     },
     SHADOWRCOLOR_COMMIT(state, payload) {
       state.shadowcolor.r = payload;

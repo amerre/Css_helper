@@ -13,6 +13,8 @@
           <input type="range" min="0" max="255" v-model="bordergcolor">
           <h2>B : {{ borderbcolor }}</h2>
           <input type="range" min="0" max="255" v-model="borderbcolor">
+          <h2>Opacity : {{ borderacolor }}</h2>
+          <input type="range" min="0" max="1" step="0.1" v-model="borderacolor">
 
           <h2>Bg-color</h2>
           <h2>R : {{ bgrcolor }}</h2>
@@ -21,9 +23,8 @@
           <input type="range" min="0" max="255" v-model="bggcolor">
           <h2>B : {{ bgbcolor }}</h2>
           <input type="range" min="0" max="255" v-model="bgbcolor">
-
-          <h2>Opacity : {{ opacity }}</h2>
-          <input type="range" min="0" max="1" v-model="opacity" step="0.1">
+          <h2>Opacity : {{ bgacolor }}</h2>
+          <input type="range" min="0" max="1" step="0.1" v-model="bgacolor">
         </div>
       </div>
     </transition>
@@ -62,6 +63,14 @@ export default {
         this.$store.commit("BORDERBCOLOR_COMMIT", value);
       }
     },
+    borderacolor: {
+      get() {
+        return this.$store.state.bordercolor.a;
+      },
+      set(value) {
+        this.$store.commit("BORDERACOLOR_COMMIT", value);
+      }
+    },
     bgrcolor: {
       get() {
         return this.$store.state.bgcolor.r;
@@ -86,12 +95,12 @@ export default {
         this.$store.commit("BGBCOLOR_COMMIT", value);
       }
     },
-    opacity: {
+    bgacolor: {
       get() {
-        return this.$store.state.opacity;
+        return this.$store.state.bgcolor.a;
       },
       set(value) {
-        this.$store.commit("OPACITY_COMMIT", value);
+        this.$store.commit("BGACOLOR_COMMIT", value);
       }
     }
   }
