@@ -3,3 +3,22 @@
   grid-template-columns: 300px 1fr;
   height: 100vh;
 }
+#tooSmall {
+  display: none;
+}
+
+@media (max-width: 580px) {
+  #app {
+    display: none;
+  }
+  #tooSmall {
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    h1 {
+      width: 80%;
+      margin: auto;
+    }
+  }
+}

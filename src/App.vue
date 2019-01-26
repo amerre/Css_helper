@@ -1,7 +1,14 @@
 <template>
-  <div id="app">
-    <app-sidebar></app-sidebar>
-    <app-content></app-content>
+  <div>
+    <div id="app">
+      <app-sidebar></app-sidebar>
+      <app-content></app-content>
+    </div>
+    <div id="tooSmall">
+      <h1>💻📲
+        <br>Sorry, responsive isn't configured yet. I'm working on it, come back later !
+      </h1>
+    </div>
   </div>
 </template>
 
