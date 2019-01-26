@@ -21,7 +21,6 @@
 
 <script>
 export default {
-  // IMPORTED FROM CONTENT.VUE
   props: {
     width: [String, Number],
     height: [String, Number],

@@ -1,11 +1,14 @@
-@import "reset.scss";
-@import "styles/colors.scss";
+// Global styling
+@import "styles/global/reset.scss";
+@import "styles/global/colors.scss";
+@import "styles/global/text.scss";
+@import "styles/global/wrapper.scss";
 
-@import "styles/text.scss";
+// Content styling
+@import "styles/content/content.scss";
+@import "styles/content/export.scss";
+@import "styles/content/bg.scss";
 
-@import "styles/wrapper.scss";
-@import "styles/sidebar.scss";
-@import "styles/content.scss";
-@import "styles/colors.scss";
-@import "styles/export.scss";
-@import "styles/bg.scss";
+// Sidebar styling
+
+@import "styles/sidebar/sidebar.scss";

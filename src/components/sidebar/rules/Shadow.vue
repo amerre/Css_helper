@@ -8,12 +8,16 @@
         <div>
           <h2>Shadow X : {{ shadowX }}</h2>
           <input type="range" min="0" max="255" v-model="shadowX">
+
           <h2>Shadow Y : {{ shadowY }}</h2>
           <input type="range" min="0" max="255" v-model="shadowY">
+
           <h2>Spread : {{ spread }}</h2>
           <input type="range" min="-50" max="255" v-model="spread">
+
           <h2>Blur : {{ blur }}</h2>
           <input type="range" min="0" max="255" v-model="blur">
+
           <h2>Style</h2>
           <select v-model="shadowstyle">
             <option value selected>Outline</option>
@@ -21,12 +25,16 @@
           </select>
 
           <h2>Color</h2>
+
           <h2>R : {{ shadowrcolor }}</h2>
           <input type="range" min="0" max="255" v-model="shadowrcolor">
+
           <h2>G : {{ shadowgcolor }}</h2>
           <input type="range" min="0" max="255" v-model="shadowgcolor">
+
           <h2>B : {{ shadowbcolor }}</h2>
           <input type="range" min="0" max="255" v-model="shadowbcolor">
+
           <h2>Opacity : {{ shadowopacity }}</h2>
           <input type="range" min="0" max="1" step="0.1" v-model="shadowopacity">
         </div>
@@ -122,6 +130,6 @@ export default {
 <style scoped>
 .roll-enter-to,
 .roll-leave {
-  height: 392.1px;
+  height: 460.9px;
 }
 </style>

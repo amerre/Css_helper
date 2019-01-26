@@ -5,30 +5,23 @@
     </button>
     <transition name="roll" mode="out-in">
       <div v-if="show" class="rulesWrap">
-        <div>
-          <h2>Translate X : {{ translateX }} px</h2>
-          <input type="range" min="0" max="200" v-model="translateX">
-        </div>
-        <div>
-          <h2>Translate Y : {{ translateY }} px</h2>
-          <input type="range" min="0" max="200" v-model="translateY">
-        </div>
-        <div>
-          <h2>Scale : * {{ scale }}</h2>
-          <input type="range" min="0" max="5" step="0.1" v-model="scale">
-        </div>
-        <div>
-          <h2>Rotate X : {{ rotateX }} deg</h2>
-          <input type="range" min="0" max="360" v-model="rotateX">
-        </div>
-        <div>
-          <h2>Rotate Y : {{ rotateY }} deg</h2>
-          <input type="range" min="0" max="360" v-model="rotateY">
-        </div>
-        <div>
-          <h2>Rotate Z : {{ rotateZ }}deg</h2>
-          <input type="range" min="0" max="360" v-model="rotateZ">
-        </div>
+        <h2>Translate X : {{ translateX }} px</h2>
+        <input type="range" min="0" max="200" v-model="translateX">
+
+        <h2>Translate Y : {{ translateY }} px</h2>
+        <input type="range" min="0" max="200" v-model="translateY">
+
+        <h2>Scale : * {{ scale }}</h2>
+        <input type="range" min="0" max="5" step="0.1" v-model="scale">
+
+        <h2>Rotate X : {{ rotateX }} deg</h2>
+        <input type="range" min="0" max="360" v-model="rotateX">
+
+        <h2>Rotate Y : {{ rotateY }} deg</h2>
+        <input type="range" min="0" max="360" v-model="rotateY">
+
+        <h2>Rotate Z : {{ rotateZ }}deg</h2>
+        <input type="range" min="0" max="360" v-model="rotateZ">
       </div>
     </transition>
   </div>
@@ -98,6 +91,6 @@ export default {
 <style scoped >
 .roll-enter-to,
 .roll-leave {
-  height: 331.8px;
+  height: 301.8px;
 }
 </style>

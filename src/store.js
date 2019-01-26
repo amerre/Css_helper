@@ -48,15 +48,14 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    // NUMBER OF BOXES
+    // BOXES
     BOXES_COMMIT(state, payload) {
       state.boxes = payload;
     },
-    // WIDTH
+    // BASIC SIZING
     WIDTH_COMMIT(state, payload) {
       state.width = payload;
     },
-    // HEIGHT
     HEIGHT_COMMIT(state, payload) {
       state.height = payload;
     },
@@ -64,43 +63,34 @@ export default new Vuex.Store({
     BORDER_COMMIT(state, payload) {
       state.border = payload;
     },
-    // BORDER COLOR - R
     BORDERRCOLOR_COMMIT(state, payload) {
       state.bordercolor.r = payload;
     },
-    // BORDER COLOR - G
     BORDERGCOLOR_COMMIT(state, payload) {
       state.bordercolor.g = payload;
     },
-    // BORDER COLOR - B
     BORDERBCOLOR_COMMIT(state, payload) {
       state.bordercolor.b = payload;
     },
-    // BORDER COLOR - A
     BORDERACOLOR_COMMIT(state, payload) {
       state.bordercolor.a = payload;
     },
-    // BORDER RADIUS
     BORDERRADIUS_COMMIT(state, payload) {
       state.borderradius = payload;
     },
-    // BORDER STYLE
     BORDERSTYLE_COMMIT(state, payload) {
       state.borderstyle = payload;
     },
-    // BACKGROUND COLOR - R
+    // BACKGROUND
     BGRCOLOR_COMMIT(state, payload) {
       state.bgcolor.r = payload;
     },
-    // BACKGROUND COLOR - G
     BGGCOLOR_COMMIT(state, payload) {
       state.bgcolor.g = payload;
     },
-    // BACKGROUND COLOR - B
     BGBCOLOR_COMMIT(state, payload) {
       state.bgcolor.b = payload;
     },
-    // BORDER COLOR - A
     BGACOLOR_COMMIT(state, payload) {
       state.bgcolor.a = payload;
     },
@@ -151,6 +141,7 @@ export default new Vuex.Store({
     SHADOWOPACITY_COMMIT(state, payload) {
       state.shadowcolor.a = payload;
     },
+    // MARGIN
     MARGINTOP_COMMIT(state, payload) {
       state.margin.top = payload;
     },

@@ -170,19 +170,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-.fadeAndSlide-enter,
-.fadeAndSlide-leave-to {
-  opacity: 0;
-  transform: translateY(-200px);
-}
-.fadeAndSlide-enter-to,
-.fadeAndSlide-leave {
-  opacity: 1;
-}
-.fadeAndSlide-enter-active,
-.fadeAndSlide-leave-active {
-  transition: all 0.5s ease;
-}
-</style>

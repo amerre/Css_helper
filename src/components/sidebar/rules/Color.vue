@@ -7,22 +7,30 @@
       <div v-if="show" class="rulesWrap">
         <div>
           <h2>Border-color</h2>
+
           <h2>R : {{ borderrcolor }}</h2>
           <input type="range" min="0" max="255" v-model="borderrcolor">
+
           <h2>G : {{ bordergcolor }}</h2>
           <input type="range" min="0" max="255" v-model="bordergcolor">
+
           <h2>B : {{ borderbcolor }}</h2>
           <input type="range" min="0" max="255" v-model="borderbcolor">
+
           <h2>Opacity : {{ borderacolor }}</h2>
           <input type="range" min="0" max="1" step="0.1" v-model="borderacolor">
 
           <h2>Bg-color</h2>
+
           <h2>R : {{ bgrcolor }}</h2>
           <input type="range" min="0" max="255" v-model="bgrcolor">
+
           <h2>G : {{ bggcolor }}</h2>
           <input type="range" min="0" max="255" v-model="bggcolor">
+
           <h2>B : {{ bgbcolor }}</h2>
           <input type="range" min="0" max="255" v-model="bgbcolor">
+
           <h2>Opacity : {{ bgacolor }}</h2>
           <input type="range" min="0" max="1" step="0.1" v-model="bgacolor">
         </div>
@@ -110,6 +118,6 @@ export default {
 <style scoped>
 .roll-enter-to,
 .roll-leave {
-  height: 392.1px;
+  height: 442.4px;
 }
 </style>
