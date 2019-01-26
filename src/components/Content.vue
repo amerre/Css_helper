@@ -5,25 +5,18 @@
       :key="box"
       class="box"
       :style="{
-        color: 'white',
-        width: width + 'px',
-        height: height + 'px',
-        border: border + 'px ' + borderstyle + ' ' + borderrgba,
-        borderRadius: borderradius + 'px',
+        width: width,
+        height: height,
+        border: border,
+        borderRadius: borderradius,
         backgroundColor: bgrgba,
-        opacity: opacity,
-        transform:
-        'translateX(' + translateX + 'px)' +
-        'translateY(' + translateY + 'px)' +
-        'scale(' + scale + ')' +
-        'rotateX(' + rotateX + 'deg)' +
-        'rotateY(' + rotateY + 'deg)' +
-        'rotateZ(' + rotateZ + 'deg)',
-        boxShadow: shadow
+        transform: transform,
+        boxShadow: shadow,
+        margin: margin
         }"
     ></div>
     <div id="footer">
-      <button id="addABox" @click="boxes++">
+      <button id="addABox" @click="addBox">
         <h1>Add a box</h1>
       </button>
       <button @click="show = !show">
@@ -32,25 +25,24 @@
       </button>
     </div>
     <transition name="fadeAndSlide" mode="out-in">
+      <!-- PASSING DATA TO THE EXPORT COMPONENT -->
       <app-export
         v-if="show"
         :width="width"
         :height="height"
         :border="border"
         :borderradius="borderradius"
-        :borderstyle="borderstyle"
-        :borderrgba="borderrgba"
-        :bgrgba="bgrgba"
         :borderopacity="this.$store.state.bordercolor.a"
-        :opacity="opacity"
-        :translateX="translateX"
-        :translateY="translateY"
-        :scale="scale"
-        :rotateX="rotateX"
-        :rotateY="rotateY"
-        :rotateZ="rotateZ"
+        :bgrgba="bgrgba"
+        :translateX="this.$store.state.translateX"
+        :translateY="this.$store.state.translateY"
+        :scale="this.$store.state.scale"
+        :rotateX="this.$store.state.rotateX"
+        :rotateY="this.$store.state.rotateY"
+        :rotateZ="this.$store.state.rotateZ"
         :shadowopacity="this.$store.state.shadowcolor.a"
         :shadow="shadow"
+        :margin="margin"
       ></app-export>
     </transition>
   </div>
@@ -60,6 +52,13 @@
 import Export from "./Export.vue";
 
 export default {
+  methods: {
+    addBox() {
+      if (this.boxes < 3) {
+        this.boxes++;
+      }
+    }
+  },
   data() {
     return {
       show: false
@@ -69,6 +68,7 @@ export default {
     appExport: Export
   },
   computed: {
+    // GET THE BOXES
     boxes: {
       get() {
         return this.$store.state.boxes;
@@ -77,23 +77,19 @@ export default {
         this.$store.commit("BOXES_COMMIT", value);
       }
     },
+    // GET THE DIFFERENTS VARIABLES STORED IN STORE.JS
     width() {
-      return this.$store.state.width;
+      return this.$store.state.width + "px";
     },
     height() {
-      return this.$store.state.height;
+      return this.$store.state.height + "px";
     },
     border() {
-      return this.$store.state.border;
-    },
-    borderradius() {
-      return this.$store.state.borderradius;
-    },
-    borderstyle() {
-      return this.$store.state.borderstyle;
-    },
-    borderrgba() {
       return (
+        this.$store.state.border +
+        "px " +
+        this.$store.state.borderstyle +
+        " " +
         "rgba(" +
         this.$store.state.bordercolor.r +
         ", " +
@@ -104,6 +100,9 @@ export default {
         this.$store.state.bordercolor.a +
         ")"
       );
+    },
+    borderradius() {
+      return this.$store.state.borderradius + "px";
     },
     bgrgba() {
       return (
@@ -118,28 +117,28 @@ export default {
         ")"
       );
     },
-    opacity() {
-      return this.$store.state.opacity;
+    transform() {
+      return (
+        "translateX(" +
+        this.$store.state.translateX +
+        "px)" +
+        "translateY(" +
+        this.$store.state.translateY +
+        "px)" +
+        "scale(" +
+        this.$store.state.scale +
+        ")" +
+        "rotateX(" +
+        this.$store.state.rotateX +
+        "deg)" +
+        "rotateY(" +
+        this.$store.state.rotateY +
+        "deg)" +
+        "rotateZ(" +
+        this.$store.state.rotateZ +
+        "deg)"
+      );
     },
-    translateX() {
-      return this.$store.state.translateX;
-    },
-    translateY() {
-      return this.$store.state.translateY;
-    },
-    scale() {
-      return this.$store.state.scale;
-    },
-    rotateX() {
-      return this.$store.state.rotateX;
-    },
-    rotateY() {
-      return this.$store.state.rotateY;
-    },
-    rotateZ() {
-      return this.$store.state.rotateZ;
-    },
-    // TODO:
     shadow() {
       return (
         this.$store.state.shadowstyle +
@@ -162,29 +161,35 @@ export default {
         this.$store.state.shadowcolor.a +
         ")"
       );
+    },
+    margin() {
+      return (
+        this.$store.state.margin.top +
+        "px " +
+        this.$store.state.margin.right +
+        "px " +
+        this.$store.state.margin.bottom +
+        "px " +
+        this.$store.state.margin.left +
+        "px"
+      );
     }
   }
 };
 </script>
 
 <style lang="scss">
-.fadeAndSlide-enter {
+.fadeAndSlide-enter,
+.fadeAndSlide-leave-to {
   opacity: 0;
-  transform: translateX(-200px);
+  transform: translateY(-200px);
 }
-.fadeAndSlide-enter-to {
-  opacity: 1;
-}
-
+.fadeAndSlide-enter-to,
 .fadeAndSlide-leave {
   opacity: 1;
 }
-.fadeAndSlide-leave-to {
-  opacity: 0;
-  transform: translateY(200px);
-}
 .fadeAndSlide-enter-active,
 .fadeAndSlide-leave-active {
-  transition: all 0.7s ease;
+  transition: all 0.5s ease;
 }
 </style>

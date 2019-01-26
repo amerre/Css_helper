@@ -23,7 +23,6 @@ export default new Vuex.Store({
       b: 0,
       a: 1
     },
-    opacity: 1,
     translateX: 0,
     translateY: 0,
     scale: 1,
@@ -40,6 +39,12 @@ export default new Vuex.Store({
       g: 0,
       b: 0,
       a: 1
+    },
+    margin: {
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0
     }
   },
   mutations: {
@@ -145,6 +150,18 @@ export default new Vuex.Store({
     },
     SHADOWOPACITY_COMMIT(state, payload) {
       state.shadowcolor.a = payload;
+    },
+    MARGINTOP_COMMIT(state, payload) {
+      state.margin.top = payload;
+    },
+    MARGINRIGHT_COMMIT(state, payload) {
+      state.margin.right = payload;
+    },
+    MARGINBOTTOM_COMMIT(state, payload) {
+      state.margin.bottom = payload;
+    },
+    MARGINLEFT_COMMIT(state, payload) {
+      state.margin.left = payload;
     }
   }
 });
