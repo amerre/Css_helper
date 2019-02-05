@@ -12,15 +12,15 @@ export default new Vuex.Store({
     borderradius: 0,
     borderstyle: "solid",
     bordercolor: {
-      r: 0,
+      r: 255,
       g: 255,
-      b: 0,
+      b: 255,
       a: 1
     },
     bgcolor: {
-      r: 0,
-      g: 0,
-      b: 0,
+      r: 100,
+      g: 50,
+      b: 100,
       a: 1
     },
     translateX: 0,
@@ -35,9 +35,9 @@ export default new Vuex.Store({
     blur: 0,
     shadowstyle: "",
     shadowcolor: {
-      r: 0,
-      g: 0,
-      b: 0,
+      r: 100,
+      g: 50,
+      b: 100,
       a: 1
     },
     margin: {
