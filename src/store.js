@@ -12,7 +12,7 @@ export default new Vuex.Store({
     borderradius: 0,
     borderstyle: "solid",
     bordercolor: {
-      r: 255,
+      r: 0,
       g: 255,
       b: 255,
       a: 1
@@ -42,7 +42,7 @@ export default new Vuex.Store({
     },
     margin: {
       top: 0,
-      right: 0,
+      right: 20,
       bottom: 0,
       left: 0
     }
